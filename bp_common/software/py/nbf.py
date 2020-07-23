@@ -135,7 +135,8 @@ class NBF:
     for k in sorted(self.dram_data.keys()):
       addr = k
       opcode = self.get_opcode(addr)
-      self.print_nbf(opcode, addr, self.dram_data[k])
+      if self.dram_data[k] != 0:
+        self.print_nbf(opcode, addr, self.dram_data[k])
 
   # print finish
   # when spmd loader sees, this it stops sending packets.
